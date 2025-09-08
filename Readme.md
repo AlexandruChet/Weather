@@ -1,53 +1,59 @@
-````markdown
 # 🌤 Weather Forecast App
 
-A simple React application to get a 5-day weather forecast with a step of 3 hours using the [OpenWeatherMap API](https://openweathermap.org/forecast5).
-Styling is done using **Bootstrap 5**.
+A simple **React + TypeScript** application to get a **5-day weather forecast** (3-hour intervals) using the [OpenWeatherMap API](https://openweathermap.org/forecast5).  
+The interface is styled with **Bootstrap 5** for a clean and responsive design.
 
 ---
 
-## 🚀 Functional
-- Entering the city and getting the weather forecast.
-- Error handling (incorrect city or problems with API).
-- Display loading (spinner).
-- Output of the forecast for the next 7 intervals (usually ~1–2 days).
-- Beautiful interface on Bootstrap (cards, grid, alerts).
+## 🚀 Features
+- 🏙 Enter the city name and get a forecast.
+- ⚠️ Error handling (invalid city / API issues).
+- ⏳ Loading indicator with spinner.
+- 📅 Displays **7 nearest intervals** (~1–2 days).
+- 🎨 Modern **Bootstrap UI** (cards, grid, alerts).
 
 ---
 
+## 📦 Installation & Start
 
-###Start the project
+```
 
+### 1. Install dependencies
+```bash
+npm install
+```
+
+### 2. Start the project
+For Vite:
 ```bash
 npm run dev
 ```
 
-(or if you use `create-react-app`):
-
+For Create React App:
 ```bash
 npm start
 ```
 
 ---
 
-## ⚙️ API configuration
+## ⚙️ API Configuration
 
-The application requires an API key from the [OpenWeatherMap](https://home.openweathermap.org/api_keys) website.
-In the code, it is in a variable:
+You need an API key from [OpenWeatherMap](https://home.openweathermap.org/api_keys).  
+In the code, it is stored in:
 
 ```ts
 const API_KEY = "myAPI";
 ```
 
-👉 Replace `myAPI` with your key.
-It is recommended to store the key in an `.env` file, for example:
+👉 Replace `myAPI` with your key.  
+
+🔒 For better security, store it in an `.env` file:
 
 ```env
 VITE_WEATHER_API_KEY=your_api_key_here
 ```
-but not necessarily in small projects
 
-And in the code use:
+And use it in code:
 
 ```ts
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
@@ -55,13 +61,13 @@ const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 ---
 
-## 🖼️ Interface
+## 🖼️ Interface Preview
 
-* City input field
-* Button with loading indicator
-* Forecast cards (temperature and time)
+- ✅ City input field  
+- ✅ Button with loading indicator  
+- ✅ Forecast cards with **temperature & time**  
 
-Example result:
+Example:
 
 ```
 📅 Day 1
@@ -69,10 +75,21 @@ Example result:
 2025-09-08 12:00:00
 ```
 
+![Weather App Preview](https://via.placeholder.com/800x400.png?text=Weather+App+Preview)
+
 ---
 
 ## 🛠️ Technologies
+- ⚛️ **React 18** + **TypeScript**
+- 🎨 **Bootstrap 5** (cards, grid, alerts, spinner)
+- 🌐 **Fetch API** (for requests to OpenWeatherMap)
 
-* **React 18** + **TypeScript**
-* **Bootstrap 5** (cards, buttons, grid, alerts, spinner)
-* **Fetch API** for working with OpenWeatherMap
+---
+
+## 🔮 Possible Improvements
+- 🌈 Add weather condition icons (☀️ 🌧️ 🌩️).
+- 💾 Save last searched city in `localStorage`.
+- 📊 Show more forecast days.
+- 🌡 Switch between °C and °F.
+
+---
