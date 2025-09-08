@@ -93,3 +93,97 @@ Example:
 - 🌡 Switch between °C and °F.
 
 ---
+
+# 🎨 Header Component
+
+A stylish **React + TypeScript** header component with a card.  
+It uses **Bootstrap 5** for layout and styling, and supports dynamic content from `data.ts`.
+
+---
+
+## 🚀 Features
+- 🌈 Gradient background (`linear-gradient(135deg, #007bff, #6610f2)`).
+- 🎭 Animated toggle between **Show More / Hide Details**.
+- 🖼 Card with image, title, subtitle, and text from props (`data.ts`).
+- ⚡ Smooth transition effects with Bootstrap + custom CSS.
+
+---
+
+## 📦 Installation & Usage
+
+1. Import the component into your React app:
+```tsx
+import Header from "./Header";
+```
+
+2. Use it in your page:
+```tsx
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 📂 Data Structure
+
+The component expects data from `data.ts`:
+
+```ts
+// data.ts
+export type component = {
+  title: string;
+  url: string;
+  headline: string;
+  text: string;
+};
+
+export const text: component[] = [
+  {
+    title: "Weather App Info",
+    url: "https://via.placeholder.com/600x300.png?text=Weather+App",
+    headline: "Check the weather anywhere",
+    text: "This is a weather forecast app built with React and Bootstrap."
+  }
+];
+```
+
+---
+
+## 🖼️ Interface
+
+Initially, you see only a **title** and a **button**:  
+
+```
+This is Weather App
+[ Show More ]
+```
+
+After clicking **Show More**, a card appears with extra details:  
+- 📝 Title (`element.title`)  
+- 🖼 Image (`element.url`)  
+- 💬 Headline (`element.headline`)  
+- 📖 Text (`element.text`)  
+- 🔗 "Learn More" button  
+
+---
+
+## 🛠️ Technologies
+- ⚛️ **React 18** + **TypeScript**
+- 🎨 **Bootstrap 5**
+- ✨ **animate.css** (for fade-in animation)
+- 💡 Custom inline styles for shadows and transitions
+
+---
+
+## 🔮 Possible Improvements
+- Add support for multiple elements (carousel or list).
+- Add props for customization instead of hardcoding `text[0]`.
+- Replace inline styles with SCSS/Bootstrap utility classes.
+- Add routing to "Learn More" button.
