@@ -1,97 +1,104 @@
-# 🌤 Weather Forecast App
+---
 
-A simple **React + TypeScript** application to get a **5-day weather forecast** (3-hour intervals) using the [OpenWeatherMap API](https://openweathermap.org/forecast5).  
-The interface is styled with **Bootstrap 5** for a clean and responsive design.
+````markdown
+# 🌍 Weather App
 
 ---
 
-## 🚀 Features
-- 🏙 Enter the city name and get a forecast.
-- ⚠️ Error handling (invalid city / API issues).
-- ⏳ Loading indicator with spinner.
-- 📅 Displays **7 nearest intervals** (~1–2 days).
-- 🎨 Modern **Bootstrap UI** (cards, grid, alerts).
+## 📌 Opportunities
+
+- Search for the weather forecast in the city
+- Display of **temperature**, **date/time**, **weather icon** and its **description**
+- Loading with an indicator (`spinner')
+- Errors with understandable messages (for example, if the city is not found)
+- Responsive design using **Bootstrap 5**
+- Easy animation via CSS
 
 ---
 
-## 📦 Installation & Start
+## 🛠️ Technology stack
 
-```
+- ⚛️ **React + TypeScript**
+- 🎨 **Bootstrap 5**
+- 🌤 **OpenWeatherMap API**
+- 💅 **CSS animations**
 
-### 1. Install dependencies
+---
+
+## 📦 Installation and launch
+
+````
+
+### 1. Installation of dependencies
+
 ```bash
 npm install
 ```
 
-### 2. Start the project
-For Vite:
+### 2. Setting up the API key
+
+* Go to [OpenWeatherMap](https://openweathermap.org/api) and register.
+* Get a free **API KEY**.
+* In the file `Weather.tsx` replace:
+
+```ts
+const API_KEY = "aa99c2209fe9601572ce408e2236898f";
+```
+
+on your own key.
+
+### 3. Project launch
+
 ```bash
 npm run dev
 ```
 
-For Create React App:
+By default, the application will be available on
+👉 [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📁 Project structure
+
+```
+weather-app/
+│── src/
+│ ├──App/
+│ │└── services
+│ │ └── weather
+│ │ └── Weather.tsx # Main component
+│ │ └──Weather.css # Styles
+│ └──App.tsx
+│ └── main.tsx # Entry point
+│── package.json
+│── tsconfig.json
+│── README.md
+```
+
+---
+
+## 📜 Usage example
+
+1. Enter the name of the city (for example: `Berlin,de`)
+2. Press **"Get Weather"**
+3. Get a weather forecast for the next 7 intervals
+
+---
+
+## 🚀 Deploy
+
+You can deploy the application to:
+
+* [Vercel](https://vercel.com/)
+* [Netlify](https://www.netlify.com/)
+* GitHub Pages
+
+Example for Vercel:
+
 ```bash
-npm start
+npm run build
+vercel
 ```
-
----
-
-## ⚙️ API Configuration
-
-You need an API key from [OpenWeatherMap](https://home.openweathermap.org/api_keys).  
-In the code, it is stored in:
-
-```ts
-const API_KEY = "myAPI";
-```
-
-👉 Replace `myAPI` with your key.  
-
-🔒 For better security, store it in an `.env` file:
-
-```env
-VITE_WEATHER_API_KEY=your_api_key_here
-```
-
-And use it in code:
-
-```ts
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-```
-
----
-
-## 🖼️ Interface Preview
-
-- ✅ City input field  
-- ✅ Button with loading indicator  
-- ✅ Forecast cards with **temperature & time**  
-
-Example:
-
-```
-📅 Day 1
-🌡 18 °C
-2025-09-08 12:00:00
-```
-
-![Weather App Preview](https://via.placeholder.com/800x400.png?text=Weather+App+Preview)
-
----
-
-## 🛠️ Technologies
-- ⚛️ **React 18** + **TypeScript**
-- 🎨 **Bootstrap 5** (cards, grid, alerts, spinner)
-- 🌐 **Fetch API** (for requests to OpenWeatherMap)
-
----
-
-## 🔮 Possible Improvements
-- 🌈 Add weather condition icons (☀️ 🌧️ 🌩️).
-- 💾 Save last searched city in `localStorage`.
-- 📊 Show more forecast days.
-- 🌡 Switch between °C and °F.
-
 ---
 
 # 🎨 Header Component
